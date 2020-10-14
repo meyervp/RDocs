@@ -11,9 +11,7 @@ Once the installation is done you just have to create a client-side file in whic
 <a name="create-menu"></a>
 ### Create a menu
 
-To create your menu we will use the [RMenu](/docs/{{version}}/rmenu) utility provided with RageUI, if you want to understand how it works I invite you to check by yourself on the documentation.
-
-    RMenu.Add('showcase', 'main', RageUI.CreateMenu("RageUI", "showcase"))
+    local mainMenu = RageUI.CreateMenu("RageUI", "showcase")
     
 You have just created your first menu, this one and instantiate it in a distance table that can be called in any client-side file.
 
@@ -25,7 +23,7 @@ Now with a new feature in RageUI you can now manage opening and closing in Menu 
 For this we will use [Keys](/docs/{{version}}/keys)
 
     Keys.Register('E', 'E', 'Open RageUI Showcase menu default.', function()
-        RageUI.Visible(RMenu:Get('showcase', 'main'), not RageUI.Visible(RMenu:Get('showcase', 'main')))
+        RageUI.Visible(mainMenu, not RageUI.Visible(mainMenu))
     end)
 
 Pressing the E key will open or close your menu.
@@ -37,8 +35,8 @@ Let's now move on to the display of your menu content
 
 In the display loop of your menu just use the RageUI.IsVisible function, here is a quick example.
 
-        RageUI.IsVisible(RMenu:Get('showcase', 'main'), function()
-                RageUI.Item.Button('RageUI Button', nil, {  }, true, {
+        RageUI.IsVisible(mainMenu, function()
+                RageUI.Item.Button('RageUI Button name', 'description', {  }, true, {
                     onHovered = function()
 
                     end,
@@ -58,17 +56,17 @@ Once this is done if you press the E key you will see the menu you have just cre
 
 Here is the final result you must have obtained in your client-side file
 
-        RMenu.Add('showcase', 'main', RageUI.CreateMenu("RageUI", "showcase"))
+        local mainMenu = RageUI.CreateMenu("RageUI", "showcase")
         
         Keys.Register('E', 'E', 'Open RageUI Showcase menu default.', function()
-            RageUI.Visible(RMenu:Get('showcase', 'main'), not RageUI.Visible(RMenu:Get('showcase', 'main')))
+            RageUI.Visible(mainMenu, not RageUI.Visible(mainMenu))
         end)
         
         Citizen.CreateThread(function()
             while (true) do
                 Citizen.Wait(1.0)
-                RageUI.IsVisible(RMenu:Get('showcase', 'main'), function()
-                    RageUI.Item.Button('Basic Items', nil, {  }, true, {
+                RageUI.IsVisible(mainMenu, function()
+                    RageUI.Item.Button('Basic Items', 'description', {  }, true, {
                         onHovered = function()
         
                         end,

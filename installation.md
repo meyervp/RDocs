@@ -33,7 +33,6 @@ To use RageUI in your resources, you just need to modify the resource's manifest
 If you want to include the whole library in a global way, just copy and paste the code below.
 
     client_scripts {
-    "@RageUI/RMenu.lua",
     "@RageUI/menu/RageUI.lua",
     "@RageUI/menu/Menu.lua",
     "@RageUI/menu/MenuController.lua",

@@ -6,7 +6,7 @@
 <a name="example"></a>
 ### Example
     
-    RageUI.Item.Button('Basic Items', nil, { }, true, {
+    RageUI.Item.Button('Basic Items', 'description', {LeftLabel = ">>>" }, true, {
         onHovered = function()
 
         end,

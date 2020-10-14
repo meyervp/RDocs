@@ -2,7 +2,6 @@
     - [Installation](/docs/{{version}}/installation)
     - [Getting Started](/docs/{{version}}/getting-started)
 - ## Utils
-   - [RMenu](/docs/{{version}}/rmenu)
    - [Keys](/docs/{{version}}/keys)
    - [Visual](/docs/{{version}}/visual)
 - ## Menu
